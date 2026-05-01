@@ -1,5 +1,8 @@
+import { notFound } from "next/navigation";
+
 import { HeaderBlock } from "@/components/blocks/header";
 import { HeroBlock } from "@/components/blocks/hero";
+import { LogoBarBlock } from "@/components/blocks/logo-bar";
 import { ProblemBlock } from "@/components/blocks/problem";
 import { ModulesBlock } from "@/components/blocks/modules";
 import { FlowsBlock } from "@/components/blocks/flows";
@@ -9,27 +12,43 @@ import { PricingTeaserBlock } from "@/components/blocks/pricing-teaser";
 import { FaqBlock } from "@/components/blocks/faq";
 import { FinalCtaBlock } from "@/components/blocks/final-cta";
 import { FooterBlock } from "@/components/blocks/footer";
+import { getLandingMessages } from "@/content/messages";
+import { isSupportedLocale } from "@/lib/locales";
 
-export default function LandingHome() {
+type LandingHomeProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function LandingHome({ params }: LandingHomeProps) {
+  const { locale } = await params;
+  if (!isSupportedLocale(locale)) {
+    notFound();
+  }
+
+  const skipLink = getLandingMessages(locale).skipLink;
+
   return (
     <div className="flex flex-1 flex-col">
-      <HeaderBlock />
-      <main className="flex flex-1 flex-col gap-12 px-4 py-10 sm:px-6 lg:px-8">
-        <p className="mx-auto w-full max-w-6xl rounded-md border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
-          Hello Dominus OS — landing scaffold (SAP-166). Conteúdo real entra em
-          SAP-164.
-        </p>
-        <HeroBlock />
-        <ProblemBlock />
-        <ModulesBlock />
-        <FlowsBlock />
-        <IntegrationsBlock />
-        <SocialProofBlock />
-        <PricingTeaserBlock />
-        <FaqBlock />
-        <FinalCtaBlock />
+      <a
+        href="#hero"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:text-primary-foreground"
+      >
+        {skipLink}
+      </a>
+      <HeaderBlock locale={locale} />
+      <main className="flex flex-1 flex-col">
+        <HeroBlock locale={locale} />
+        <LogoBarBlock locale={locale} />
+        <ProblemBlock locale={locale} />
+        <ModulesBlock locale={locale} />
+        <FlowsBlock locale={locale} />
+        <IntegrationsBlock locale={locale} />
+        <SocialProofBlock locale={locale} />
+        <PricingTeaserBlock locale={locale} />
+        <FaqBlock locale={locale} />
+        <FinalCtaBlock locale={locale} />
       </main>
-      <FooterBlock />
+      <FooterBlock locale={locale} />
     </div>
   );
 }
