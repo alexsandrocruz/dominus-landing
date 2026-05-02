@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Inter, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { isSupportedLocale, SUPPORTED_LOCALES } from "@/lib/locales";
+
+import "../../globals.css";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -26,14 +30,30 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
 };
 
-export default function RootLayout({
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+};
+
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map((locale) => ({ locale }));
+}
+
+type LocaleLayoutProps = {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+};
+
+export default async function LocaleLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params,
+}: LocaleLayoutProps) {
+  const { locale } = await params;
+  if (!isSupportedLocale(locale)) {
+    notFound();
+  }
   return (
     <html
-      lang="pt-BR"
+      lang={locale}
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
