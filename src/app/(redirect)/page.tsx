@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RedirectClient } from "@/components/redirect-client";
+import { DEFAULT_LOCALE } from "@/lib/locales";
 
-const DEFAULT_LOCALE = "pt-BR";
 const TARGET = `/${DEFAULT_LOCALE}/`;
 
 export const metadata: Metadata = {
