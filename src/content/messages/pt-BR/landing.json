@@ -1,0 +1,231 @@
+{
+  "skipLink": "Pular para o conteúdo",
+  "header": {
+    "brand": "Dominus",
+    "nav": {
+      "modulos": "Módulos",
+      "comoFunciona": "Como funciona",
+      "faq": "FAQ"
+    },
+    "ctas": {
+      "login": "Acessar minha conta",
+      "demo": "Agendar demo"
+    }
+  },
+  "hero": {
+    "eyebrow": "Plataforma de operação",
+    "headline": "Lorem ipsum: o sistema único da sua operação de serviços",
+    "subhead": "Lorem ipsum dolor sit amet — substitua por copy real (SAP-159). CRM, jurídico, IA e atendimento conversando entre si, sem N planilhas.",
+    "ctaPrimary": "Agendar demo",
+    "screenshotAlt": "Captura de tela placeholder do Dominus OS (entra em SAP-168)"
+  },
+  "logoBar": {
+    "headline": "Em breve",
+    "subhead": "Logos de clientes parceiros aparecem aqui após curadoria do board (SAP-157)."
+  },
+  "problema": {
+    "eyebrow": "O problema",
+    "headline": "Lorem ipsum: três dores que sua operação reconhece",
+    "bullets": [
+      {
+        "title": "Lorem ipsum dolor sit amet",
+        "body": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        "title": "Ut enim ad minim veniam",
+        "body": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      {
+        "title": "Duis aute irure dolor",
+        "body": "In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      }
+    ],
+    "cta": "Quero entender melhor"
+  },
+  "modulos": {
+    "eyebrow": "Os módulos",
+    "headline": "Lorem ipsum: ative só o que sua operação precisa",
+    "subhead": "Plano por módulo. Conversamos qual cabe.",
+    "cards": [
+      {
+        "slug": "crm",
+        "icon": "Users",
+        "title": "CRM",
+        "body": "Lorem ipsum dolor sit amet — pipeline, leads e contatos em um só lugar.",
+        "status": "estavel"
+      },
+      {
+        "slug": "juridico",
+        "icon": "Scale",
+        "title": "Jurídico",
+        "body": "Lorem ipsum — gestão de processos, prazos e documentos integrados.",
+        "status": "estavel"
+      },
+      {
+        "slug": "ia",
+        "icon": "Sparkles",
+        "title": "IA",
+        "body": "Lorem ipsum — automações que escrevem, classificam e respondem por você.",
+        "status": "rollout"
+      },
+      {
+        "slug": "atendimento",
+        "icon": "MessageSquare",
+        "title": "Atendimento",
+        "body": "Lorem ipsum — caixa única para todos os canais com triagem assistida.",
+        "status": "estavel"
+      },
+      {
+        "slug": "whatsapp",
+        "icon": "MessageCircle",
+        "title": "WhatsApp",
+        "body": "Lorem ipsum — conversas oficiais via API com disparo controlado.",
+        "status": "rollout"
+      },
+      {
+        "slug": "telefonia",
+        "icon": "Phone",
+        "title": "Telefonia",
+        "body": "Lorem ipsum — discador, gravação e métricas direto no CRM.",
+        "status": "rollout"
+      }
+    ],
+    "badges": {
+      "estavel": "estável",
+      "rollout": "em rollout"
+    }
+  },
+  "comoFunciona": {
+    "eyebrow": "Como funciona",
+    "headline": "Lorem ipsum: três passos para ligar a operação",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Conversa de descoberta",
+        "body": "Lorem ipsum — entendemos sua operação atual, gargalos e prioridades."
+      },
+      {
+        "number": "02",
+        "title": "Setup com seu time",
+        "body": "Lorem ipsum — ativamos os módulos, importamos dados e treinamos o time."
+      },
+      {
+        "number": "03",
+        "title": "Operação rodando",
+        "body": "Lorem ipsum — acompanhamento mensal e novos módulos sob demanda."
+      }
+    ]
+  },
+  "integracoes": {
+    "eyebrow": "Integrações",
+    "headline": "Lorem ipsum: já conversa com o que você usa",
+    "subhead": "Logos placeholder — reais entram em SAP-157.",
+    "items": [
+      { "label": "WhatsApp Business" },
+      { "label": "Judit" },
+      { "label": "ERPs" },
+      { "label": "Gateways de pagamento" },
+      { "label": "Google Workspace" },
+      { "label": "Microsoft 365" },
+      { "label": "DocuSign" },
+      { "label": "Zapier" }
+    ]
+  },
+  "provaSocial": {
+    "eyebrow": "Prova social",
+    "headline": "O que dizem os clientes",
+    "quotes": []
+  },
+  "pricing": {
+    "eyebrow": "Planos",
+    "headline": "Plano por módulo. Conversamos qual cabe.",
+    "subhead": "Lorem ipsum — sem trava de contrato anual e sem mensalidade fantasma.",
+    "ctaPrimary": "Agendar demo",
+    "whatsappLabel": "Falar no WhatsApp"
+  },
+  "faq": {
+    "eyebrow": "Perguntas frequentes",
+    "headline": "Dúvidas comuns",
+    "items": [
+      {
+        "id": "preco",
+        "q": "Quanto custa o Dominus OS?",
+        "a": "Lorem ipsum dolor sit amet — preço por módulo ativo, conversamos em uma demo curta. Conteúdo final em SAP-159."
+      },
+      {
+        "id": "prazo",
+        "q": "Qual o prazo de implantação?",
+        "a": "Lorem ipsum — depende do escopo. Setup básico em até 2 semanas; integrações personalizadas conforme complexidade."
+      },
+      {
+        "id": "dados",
+        "q": "E os meus dados, ficam onde?",
+        "a": "Lorem ipsum — infraestrutura no Azure, conformidade com LGPD, exportação completa garantida em contrato."
+      },
+      {
+        "id": "lgpd",
+        "q": "Vocês são compatíveis com LGPD?",
+        "a": "Lorem ipsum — sim. Operamos como controlador conjunto/operador conforme contrato. DPO disponível."
+      },
+      {
+        "id": "modulos",
+        "q": "Posso ativar só alguns módulos?",
+        "a": "Lorem ipsum — sim, justamente esse é o ponto. Você ativa o que faz sentido e vai ligando outros conforme cresce."
+      },
+      {
+        "id": "migracao",
+        "q": "Migramos dados de outro sistema?",
+        "a": "Lorem ipsum — sim. Importamos de planilhas, CRMs comuns e bancos via CSV/API. Migrações pesadas têm plano dedicado."
+      },
+      {
+        "id": "suporte",
+        "q": "Como funciona o suporte?",
+        "a": "Lorem ipsum — chat e WhatsApp em horário comercial. SLA por plano contratado."
+      },
+      {
+        "id": "cancelar",
+        "q": "Posso cancelar quando quiser?",
+        "a": "Lorem ipsum — sem multa de cancelamento. Aviso prévio de 30 dias e exportação de dados garantida."
+      }
+    ]
+  },
+  "ctaFinal": {
+    "headline": "Lorem ipsum: pronto para ligar sua operação?",
+    "subhead": "Lorem ipsum — uma demo de 30 minutos é o suficiente para você ver se o Dominus OS resolve.",
+    "cta": "Agendar demo agora"
+  },
+  "footer": {
+    "tagline": "Plataforma de operação para escritórios e estúdios.",
+    "columns": [
+      {
+        "title": "Produto",
+        "links": [
+          { "label": "Módulos", "href": "#modulos" },
+          { "label": "Como funciona", "href": "#como-funciona" },
+          { "label": "FAQ", "href": "#faq" }
+        ]
+      },
+      {
+        "title": "Empresa",
+        "links": [
+          { "label": "Sapienza AE", "href": "https://sapienzaae.com.br", "external": true }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacidade (LGPD)", "href": "/privacidade/" },
+          { "label": "Termos de uso", "href": "/termos/" }
+        ]
+      },
+      {
+        "title": "Contato",
+        "links": [
+          { "label": "Acessar minha conta", "href": "https://app.dominusapp.com.br", "external": true }
+        ]
+      }
+    ],
+    "social": [],
+    "copyright": "© 2026 Dominus OS. Todos os direitos reservados."
+  }
+}

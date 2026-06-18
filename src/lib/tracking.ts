@@ -1,8 +1,15 @@
 /**
  * Tracking helpers. The page-level pattern is `data-cta-*` attributes on
  * interactive elements, which a single delegated listener forwards to GTM
- * via `dataLayer`. Concrete listener wiring is out of scope for SAP-166 and
+ * via `dataLayer`. Concrete listener wiring is out of scope for SAP-167 and
  * lands together with the GTM container ID (SAP-161).
+ *
+ * SAP-167 contract with GrowthMarketer:
+ *   data-cta-label    — slug curto (ex: agendar-demo-hero)
+ *   data-cta-position — header | hero | problema | modulos | fluxos
+ *                       | integracoes | prova-social | pricing | faq
+ *                       | cta-final | footer | floating
+ *   data-cta-variant  — primary | secondary | tertiary
  */
 
 declare global {
@@ -11,25 +18,48 @@ declare global {
   }
 }
 
+export type CtaPosition =
+  | "header"
+  | "hero"
+  | "problema"
+  | "modulos"
+  | "fluxos"
+  | "integracoes"
+  | "prova-social"
+  | "pricing"
+  | "faq"
+  | "cta-final"
+  | "footer"
+  | "floating";
+
+export type CtaVariant = "primary" | "secondary" | "tertiary";
+
 export type CtaEventPayload = {
   event: "cta_click";
-  cta_id: string;
-  cta_label?: string;
-  cta_location?: string;
+  cta_label: string;
+  cta_position?: CtaPosition;
+  cta_variant?: CtaVariant;
   cta_destination?: string;
 };
 
+export type CtaDataAttributes = {
+  "data-cta-label": string;
+  "data-cta-position"?: CtaPosition;
+  "data-cta-variant"?: CtaVariant;
+  "data-cta-destination"?: string;
+};
+
 export function buildCtaDataAttributes(opts: {
-  id: string;
-  label?: string;
-  location?: string;
+  label: string;
+  position?: CtaPosition;
+  variant?: CtaVariant;
   destination?: string;
-}): Record<string, string> {
-  const attrs: Record<string, string> = {
-    "data-cta-id": opts.id,
+}): CtaDataAttributes {
+  const attrs: CtaDataAttributes = {
+    "data-cta-label": opts.label,
   };
-  if (opts.label) attrs["data-cta-label"] = opts.label;
-  if (opts.location) attrs["data-cta-location"] = opts.location;
+  if (opts.position) attrs["data-cta-position"] = opts.position;
+  if (opts.variant) attrs["data-cta-variant"] = opts.variant;
   if (opts.destination) attrs["data-cta-destination"] = opts.destination;
   return attrs;
 }
@@ -41,13 +71,15 @@ export function pushEvent(payload: Record<string, unknown>): void {
 }
 
 export function trackCtaClick(target: HTMLElement): void {
-  const id = target.dataset.ctaId;
-  if (!id) return;
+  const label = target.dataset.ctaLabel;
+  if (!label) return;
+  const position = target.dataset.ctaPosition as CtaPosition | undefined;
+  const variant = target.dataset.ctaVariant as CtaVariant | undefined;
   const payload: CtaEventPayload = {
     event: "cta_click",
-    cta_id: id,
-    cta_label: target.dataset.ctaLabel,
-    cta_location: target.dataset.ctaLocation,
+    cta_label: label,
+    cta_position: position,
+    cta_variant: variant,
     cta_destination: target.dataset.ctaDestination,
   };
   pushEvent(payload);
